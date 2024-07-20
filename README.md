@@ -29,4 +29,4 @@ The goal of this project is to enhance the current AUK website by improving its 
 ### Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/KabriAcid/auk-website-revamp.git
+   git clone https://github.com/KabriAcid/auk-web.git
