@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al-Qalam University Katsina</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="flex justify-center items-center h-screen bg-gray-100">
-    <div class="bg-white shadow-lg rounded-lg max-w-sm w-full text-center p-8">
+
+<body class="flex justify-center items-center h-screen bg-gray-100" style="font-family: figtree;">
+    <div class="bg-white shadow-lg rounded-xl w-1/2 text-center p-8">
         <div class="card-header mb-4">
-            <img src="path-to-your-logo.png" alt="Logo" class="mx-auto mb-4 w-16 h-16">
-            <h1 class="text-xl font-semibold">Al-Qalam University Katsina</h1>
+            <img src="{{ asset('images/logo.jpg') }}" alt="Logo" class="mx-auto mb-4 w-24 h-24">
+            <h1 class="text-2xl font-bold" style="color: #94152b;">AL-QALAM UNIVERSITY KATSINA</h1>
+            <p class="text-sm text-gray-500">ALONG DUTSINMA ROAD, KATSINA, KATSINA.</p>
         </div>
         <div class="card-body mb-4">
-            <p>This is some dummy text to fill the card's body.</p>
+            <p class="text-lg">This is some dummy text to fill the card's body.</p>
         </div>
         <div class="card-footer text-gray-600 text-sm">
-            <p>&copy; 2024 Al-Qalam University Katsina. All rights reserved.</p>
+            <p>&copy; Copyright <?= date('Y');?> @ AUK</p>
         </div>
     </div>
 </body>
+
 </html>
