@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al-Qalam University Katsina</title>
     <!-- favicon -->
-     <link rel="shortcut icon" href="{{ asset('images/logo.jpg') }}" type="image/x-icon">
+     <link rel="shortcut icon" href="{{ asset('images/logo-removebg.png') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -18,7 +18,7 @@
 <body class="flex justify-center items-center h-screen bg-gray-100" style="font-family: figtree;">
     <div class="bg-white shadow-lg rounded-xl w-1/2 text-center p-8">
         <div class="card-header mb-4">
-            <img src="{{ asset('images/logo.jpg') }}" alt="Logo" class="mx-auto mb-4 w-24 h-24">
+            <img src="{{ asset('images/logo-removebg.png') }}" alt="Logo" class="mx-auto mb-4 w-24 h-24">
             <h1 class="text-2xl font-bold" style="color: #94152b;">AL-QALAM UNIVERSITY KATSINA</h1>
             <p class="text-sm text-gray-500">ALONG DUTSINMA ROAD, KATSINA, KATSINA.</p>
         </div>
