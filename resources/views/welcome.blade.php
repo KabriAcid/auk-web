@@ -23,7 +23,7 @@
             <p class="text-sm text-gray-500">ALONG DUTSINMA ROAD, KATSINA, KATSINA.</p>
         </div>
         <div class="card-body mb-4">
-            <p class="text-lg">This is some dummy text to fill the card's body.</p>
+            <p class="text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur eius accusamus alias facere aspernatur iusto veritatis non dignissimos, labore, quam sed consequuntur?.</p>
         </div>
         <div class="card-footer text-gray-600 text-sm">
             <p>&copy; Copyright <?= date('Y');?> @ AUK</p>
