@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al-Qalam University Katsina</title>
+    <!-- favicon -->
+     <link rel="shortcut icon" href="{{ asset('images/logo.jpg') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
