@@ -25,8 +25,8 @@ To maintain consistency and clarity in our version control, we follow these bran
   - Example: `feature/username`
 - **ui/**: Fixes for non-critical issues.
   - Example: `ui/fix-footer-alignment`
-- **hotfix/**: Urgent or critical fixes that need to be addressed immediately.
-  - Example: `hotfix/username`
+- **backend/**: Urgent or critical fixes that need to be addressed immediately.
+  - Example: `backend/username`
 - **chore/**: Maintenance tasks or refactoring.
   - Example: `chore/username`
 
@@ -34,7 +34,7 @@ To maintain consistency and clarity in our version control, we follow these bran
 ### Examples
 - `feature/KabriAcid`
 - `ui/5678-fix-crash-on-login`
-- `hotfix/urgent-security-patch`
+- `backend/urgent-security-patch`
 - `release/1.2.0`
 
 ### Consistency
