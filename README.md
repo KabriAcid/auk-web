@@ -37,9 +37,14 @@ To get started with the project, follow these steps:
 - Git
 - PHP (>= 7.4)
 - Composer
-- Node.js and npm
+- Terminal
 
 ### Installation
 1. Clone the repository:
    ```sh
    git clone https://github.com/KabriAcid/auk-web.git
+  2. Use composer to install all dependencies
+  3. Generate a key
+  4. Create a database 
+  5. Run migrations
+  6. Use the php artisan serve command to open a connection
