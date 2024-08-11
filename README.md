@@ -23,28 +23,21 @@ To maintain consistency and clarity in version control, we follow these branch n
 
 ### Prefixes
 - **feature/**: New features or enhancements.
-  - Example: `feature/username`
 - **ui/**: Fixes for non-critical UI issues.
-  - Example: `ui/username`
 - **backend/**: Urgent or critical backend fixes.
-  - Example: `backend/username`
 - **chore/**: Maintenance tasks or refactoring.
-  - Example: `chore/username`
 - **release/**: Release-related branches.
-  - Example: `release/1.2.0`
-
-### Examples
-- `feature/new-user-profile`
-- `ui/fix-footer-alignment`
-- `backend/fix-authentication-issue`
-- `chore/update-dependencies`
-- `release/2.0.0`
 
 ### Consistency
 - All contributors are expected to adhere to these conventions to ensure clarity and traceability. Consistent naming helps streamline the development process and facilitates smoother collaboration.
 
+## Design Guidelines
+
+- **Color Scheme**: Use the 60/30/10 color rule for the design. This rule suggests that 60% of the color scheme should be a dominant color, 30% should be a secondary color, and 10% should be an accent color to create visual interest and balance.
+- **Database Column Naming**: All database column names must comply with the lowercase and underscore format. For example, use `first_name` instead of `FirstName` or `firstName`.
+
 ## Technologies Used
-- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap
+- **Frontend**: HTML5, CSS3, JavaScript, Tailwind CSS
 - **Backend**: PHP, Laravel Framework
 - **Database**: MySQL
 
