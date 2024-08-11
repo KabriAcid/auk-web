@@ -3,9 +3,11 @@
 This repository contains the source code and documentation for the revamp of the Al-Qalam University Katsina (AUK) official website.
 
 ## Project Overview
+
 The goal of this project is to enhance the current AUK website by improving its design, usability, and functionality. Key improvements include a modern user interface, responsive design, and additional features to better serve students, faculty, and visitors.
 
 ## Features
+
 - Modern and responsive design
 - Improved navigation and user experience
 - Enhanced accessibility
@@ -14,7 +16,9 @@ The goal of this project is to enhance the current AUK website by improving its 
 - Optimized performance and security
 
 ## Technologies
+
 The project leverages the following technologies:
+
 - **HTML5**: Markup language for structuring content on the web.
 - **CSS3**: Style sheet language for describing the presentation of web pages.
 - **JavaScript**: Programming language for creating interactive and dynamic web content.
@@ -34,17 +38,21 @@ The project leverages the following technologies:
 To get started with the project, follow these steps:
 
 ### Prerequisites
-- Git
-- PHP (>= 7.4)
-- Composer
-- Terminal
+
+Ensure you have the following installed on your system:
+
+- [Git](https://git-scm.com/)
+- [PHP (>= 7.4)](https://www.php.net/downloads)
+- [Composer](https://getcomposer.org/download/)
+- [Node.js and npm](https://nodejs.org/en/download/)
+- [MySQL](https://dev.mysql.com/downloads/)
 
 ### Installation
-1. Clone the repository:
+
+1. **Clone the Repository**
+
+   Clone the repository to your local machine using the following command:
+
    ```sh
    git clone https://github.com/KabriAcid/auk-web.git
-  2. Use composer to install all dependencies
-  3. Generate a key
-  4. Create a database 
-  5. Run migrations
-  6. Use the php artisan serve command to open a connection
+2. 
