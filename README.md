@@ -46,7 +46,6 @@ Ensure you have the following installed on your system:
 - [Composer](https://getcomposer.org/download/)
 - [Node.js and npm](https://nodejs.org/en/download/)
 - [MySQL](https://dev.mysql.com/downloads/)
-
 ### Installation
 
 1. **Clone the Repository**
@@ -55,4 +54,117 @@ Ensure you have the following installed on your system:
 
    ```sh
    git clone https://github.com/KabriAcid/auk-web.git
-2. 
+   ```
+
+2. **Navigate into the Project Directory**
+
+   Navigate into the project directory:
+
+   ```sh
+   cd auk-web
+   ```
+
+3. **Install PHP Dependencies**
+
+   Use Composer to install all PHP dependencies required by the project:
+
+   ```sh
+   composer install
+   ```
+
+4. **Install Node.js Dependencies**
+
+   Use npm to install all Node.js dependencies required for frontend assets:
+
+   ```sh
+   npm install
+   ```
+
+5. **Create a Copy of the Environment File**
+
+   Copy the `.env.example` file to `.env`:
+
+   ```sh
+   cp .env.example .env
+   ```
+
+6. **Generate an Application Key**
+
+   Generate the application key for the Laravel application:
+
+   ```sh
+   php artisan key:generate
+   ```
+
+7. **Set Up the Database**
+
+   - Open the `.env` file and update the database configuration to match your local setup:
+
+     ```env
+     DB_CONNECTION=mysql
+     DB_HOST=127.0.0.1
+     DB_PORT=3306
+     DB_DATABASE=your_database_name
+     DB_USERNAME=your_username
+     DB_PASSWORD=your_password
+     ```
+
+   - Run the database migrations to set up the necessary tables:
+
+     ```sh
+     php artisan migrate
+     ```
+
+8. **Serve the Application**
+
+   Start the development server:
+
+   ```sh
+   php artisan serve
+   ```
+
+9. **Compile Assets**
+
+   Compile the frontend assets using Laravel Mix:
+
+   ```sh
+   npm run dev
+   ```
+
+   For production:
+
+   ```sh
+   npm run prod
+   ```
+
+### Deployment
+
+For deployment to a production environment, follow these additional steps:
+
+1. **Optimize the Application**
+
+   Optimize the Laravel application for production:
+
+   ```sh
+   php artisan optimize
+   ```
+
+2. **Set Up a Web Server**
+
+   Ensure you have a web server like Apache or Nginx configured to serve the Laravel application.
+
+3. **Run Database Migrations**
+
+   Run migrations on the production server to ensure the database is up to date:
+
+   ```sh
+   php artisan migrate --force
+   ```
+
+4. **Compile Assets for Production**
+
+   Ensure assets are compiled for production:
+
+   ```sh
+   npm run prod
+   ```
