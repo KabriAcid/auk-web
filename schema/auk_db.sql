@@ -1,145 +1,175 @@
--- The following sql tables are SQL tables for a secondary school in Nigeria. Change all the instances of a secondary school and refer to a university, follow the guides below:
--- - Rename the table names where necessary
--- - Use `id` for all primary keys and add auto increment for the primary keys
--- - Add more tables where a university is needed (e.g faculty, department, and more)
--- - Remove all default values and assign appropriate varchar values each column
--- - 
+-- Table: faculties
+CREATE TABLE `faculties` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `faculty_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+);
 
+-- Table: departments
+CREATE TABLE `departments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `department_name` varchar(100) NOT NULL,
+  `faculty_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`faculty_id`) REFERENCES `faculties`(`id`) ON DELETE SET NULL ON UPDATE SET NULL
+);
 
+-- Table: disciplines
+CREATE TABLE `disciplines` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `discipline_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- Table: programs
+CREATE TABLE `programs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `program_name` varchar(100) NOT NULL,
+  `faculty_id` int(11) NOT NULL,
+  `department_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`faculty_id`) REFERENCES `faculties`(`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  FOREIGN KEY (`department_id`) REFERENCES `departments`(`id`) ON DELETE SET NULL ON UPDATE SET NULL
+);
+
+-- Table: alumni
 CREATE TABLE `alumni` (
-  `alumni_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
-  `second_name` varchar(50) DEFAULT NULL,
+  `second_name` varchar(50),
   `last_name` varchar(50) NOT NULL,
-  `phone_number` varchar(20) DEFAULT NULL,
+  `phone_number` varchar(20),
   `email` varchar(100) NOT NULL,
-  `address` varchar(50) NOT NULL DEFAULT 'UNKNOWN',
+  `address` varchar(255) NOT NULL,
   `birth_date` date NOT NULL,
-  `gender` varchar(10) DEFAULT NULL,
-  `state` varchar(100) DEFAULT NULL,
-  `lga` varchar(100) NOT NULL DEFAULT 'Jalingo',
-  `index_no` varchar(10) NOT NULL DEFAULT 'NIA',
-  `graduation_year` int(11) NOT NULL,
-  `position_held` varchar(100) NOT NULL DEFAULT 'NIL',
-  `photo` varchar(50) NOT NULL DEFAULT 'uploads/default.png',
-  `nin_number` varchar(20) NOT NULL DEFAULT 'UNAVAILABLE'
-) 
+  `gender` varchar(10),
+  `state` varchar(100),
+  `lga` varchar(100) NOT NULL,
+  `index_no` varchar(50) NOT NULL,
+  `graduation_year` int(4) NOT NULL,
+  `position_held` varchar(100),
+  `photo` varchar(255),
+  `nin_number` varchar(20),
+  PRIMARY KEY (`id`)
+);
 
+-- Table: applicants
 CREATE TABLE `applicants` (
-  `applicant_id` int(11) NOT NULL,
-  `enrolling_class` int(11) NOT NULL,
-  `section_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `program_id` int(11) NOT NULL,
+  `faculty_id` int(11) NOT NULL,
+  `department_id` int(11) NOT NULL,
   `first_name` varchar(50) NOT NULL,
-  `second_name` varchar(50) NOT NULL,
+  `second_name` varchar(50),
   `last_name` varchar(50) NOT NULL,
   `birth_date` date NOT NULL,
-  `state` varchar(50) NOT NULL,
-  `lga` varchar(50) NOT NULL,
-  `gender` varchar(50) NOT NULL,
-  `parent_first_name` varchar(50) NOT NULL,
-  `parent_last_name` varchar(50) NOT NULL,
-  `parent_email` varchar(50) NOT NULL,
-  `parent_address` varchar(50) NOT NULL,
-  `parent_phone_number` varchar(50) NOT NULL,
-  `admission_status` int(2) NOT NULL,
-  `application_code` varchar(20) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `registration_id` varchar(50) NOT NULL
-) 
+  `state` varchar(100) NOT NULL,
+  `lga` varchar(100) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `parent_first_name` varchar(50),
+  `parent_last_name` varchar(50),
+  `parent_email` varchar(100),
+  `parent_address` varchar(255),
+  `parent_phone_number` varchar(20),
+  `admission_status` varchar(20) NOT NULL,
+  `application_code` varchar(50) NOT NULL,
+  `registration_id` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`program_id`) REFERENCES `programs`(`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  FOREIGN KEY (`faculty_id`) REFERENCES `faculties`(`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  FOREIGN KEY (`department_id`) REFERENCES `departments`(`id`) ON DELETE SET NULL ON UPDATE SET NULL
+);
 
-CREATE TABLE `classes` (
-  `class_id` int(11) NOT NULL,
-  `class_name` varchar(50) NOT NULL,
-  `section_id` int(11) NOT NULL,
-  `general_section_id` int(11) NOT NULL,
-  `general_class_id` int(11) NOT NULL
-) 
+-- Table: students
+CREATE TABLE `students` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `program_id` int(11) NOT NULL,
+  `department_id` int(11) NOT NULL,
+  `faculty_id` int(11) NOT NULL,
+  `jamb_no` varchar(50) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `second_name` varchar(50),
+  `last_name` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `birth_date` date NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `lga` varchar(100) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `parent_first_name` varchar(50),
+  `parent_last_name` varchar(50),
+  `parent_email` varchar(100),
+  `parent_address` varchar(255),
+  `parent_phone_number` varchar(20),
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`program_id`) REFERENCES `programs`(`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  FOREIGN KEY (`department_id`) REFERENCES `departments`(`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  FOREIGN KEY (`faculty_id`) REFERENCES `faculties`(`id`) ON DELETE SET NULL ON UPDATE SET NULL
+);
 
-CREATE TABLE `newsletters` (
-  `newsletter_id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
-) 
-
-CREATE TABLE `school_position` (
-  `position_id` int(11) NOT NULL,
-  `position_name` varchar(50) NOT NULL,
-  `position_number` int(11) NOT NULL
-) 
-
-
-CREATE TABLE `school_sessions` (
-  `session_id` int(11) NOT NULL,
-  `session_year` varchar(11) NOT NULL
-) 
-
-CREATE TABLE `school_terms` (
-  `term_id` int(11) NOT NULL,
-  `term_name` varchar(10) NOT NULL
-) 
-
-
-CREATE TABLE `sections` (
-  `section_id` int(11) NOT NULL,
-  `section_name` varchar(100) NOT NULL,
-  `general_section_id` int(11) NOT NULL
-) 
-
+-- Table: staff
 CREATE TABLE `staff` (
-  `staff_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `class_id` int(11) NOT NULL,
-  `section_id` int(11) NOT NULL,
-  `subject_id` int(11) NOT NULL,
+  `faculty_id` int(11) NOT NULL,
+  `department_id` int(11) NOT NULL,
   `position_id` int(11) NOT NULL,
-  `qualification` varchar(11) NOT NULL,
-  `discipline` varchar(50) NOT NULL,
+  `qualification` varchar(100) NOT NULL,
+  `discipline` varchar(100) NOT NULL,
   `bank_name` varchar(50) NOT NULL,
   `birth_date` date NOT NULL,
-  `state` varchar(50) NOT NULL,
-  `lga` varchar(50) NOT NULL,
-  `gender` varchar(50) NOT NULL,
-  `photo` varchar(100) NOT NULL DEFAULT 'uploads/default.png',
-  `email` varchar(50) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `lga` varchar(100) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `photo` varchar(255),
+  `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `phone_number` varchar(50) NOT NULL,
+  `phone_number` varchar(20) NOT NULL,
   `status` varchar(50) NOT NULL,
-  `address` varchar(50) NOT NULL,
+  `address` varchar(255) NOT NULL,
   `salary` varchar(255) NOT NULL,
-  `account_number` varchar(255) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) 
+  `account_number` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`faculty_id`) REFERENCES `faculties`(`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  FOREIGN KEY (`department_id`) REFERENCES `departments`(`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  FOREIGN KEY (`position_id`) REFERENCES `position`(`id`) ON DELETE SET NULL ON UPDATE SET NULL
+);
 
-CREATE TABLE `students` (
-  `student_id` int(11) NOT NULL,
-  `class_id` int(11) NOT NULL,
-  `section_id` int(11) NOT NULL,
-  `admission_id` varchar(20) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `second_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `status` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `birth_date` date NOT NULL,
-  `state` varchar(50) NOT NULL,
-  `lga` varchar(50) NOT NULL,
-  `gender` varchar(50) NOT NULL,
-  `parent_first_name` varchar(50) NOT NULL,
-  `parent_last_name` varchar(50) NOT NULL,
-  `parent_email` varchar(50) NOT NULL,
-  `parent_address` varchar(50) NOT NULL,
-  `parent_phone_number` varchar(50) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) 
+-- Table: position
+CREATE TABLE `position` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `position_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+);
 
-CREATE TABLE `subjects` (
-  `subject_id` int(11) NOT NULL,
-  `subject_name` varchar(50) NOT NULL
-) 
+-- Table: courses
+CREATE TABLE `courses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_name` varchar(100) NOT NULL,
+  `department_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`department_id`) REFERENCES `departments`(`id`) ON DELETE SET NULL ON UPDATE SET NULL
+);
 
-CREATE TABLE `university_disciplines` (
-  `discipline_id` int(11) NOT NULL,
-  `discipline_name` varchar(100) NOT NULL
-) 
+-- Table: academic_sessions
+CREATE TABLE `academic_sessions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `session_year` varchar(9) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- Table: academic_terms
+CREATE TABLE `academic_terms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `term_name` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- Table: newsletters
+CREATE TABLE `newsletters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+);
