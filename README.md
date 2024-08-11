@@ -13,35 +13,25 @@ The goal of this project is to enhance the current AUK website by improving its 
 - Content management capabilities
 - Optimized performance and security
 
-## Branch Naming Conventions
-
-To maintain consistency and clarity in version control, we follow these branch naming conventions:
-
-### General Guidelines
-- Use **lowercase letters** and **hyphens** to separate words (e.g., `feature/username`).
-- Start branch names with a **type prefix** to categorize the branch.
-
-### Prefixes
-- **feature/**: New features or enhancements.
-- **ui/**: Fixes for non-critical UI issues.
-- **backend/**: Urgent or critical backend fixes.
-- **chore/**: Maintenance tasks or refactoring.
-- **release/**: Release-related branches.
-
-### Consistency
-- All contributors are expected to adhere to these conventions to ensure clarity and traceability. Consistent naming helps streamline the development process and facilitates smoother collaboration.
+## Technologies
+The project leverages the following technologies:
+- **HTML5**: Markup language for structuring content on the web.
+- **CSS3**: Style sheet language for describing the presentation of web pages.
+- **JavaScript**: Programming language for creating interactive and dynamic web content.
+- **Tailwind CSS**: Utility-first CSS framework for building custom designs.
+- **PHP**: Server-side scripting language for dynamic web content.
+- **Laravel**: PHP framework for building robust web applications.
+- **MySQL**: Relational database management system for data storage and retrieval.
 
 ## Design Guidelines
 
 - **Color Scheme**: Use the 60/30/10 color rule for the design. This rule suggests that 60% of the color scheme should be a dominant color, 30% should be a secondary color, and 10% should be an accent color to create visual interest and balance.
 - **Database Column Naming**: All database column names must comply with the lowercase and underscore format. For example, use `first_name` instead of `FirstName` or `firstName`.
-
-## Technologies Used
-- **Frontend**: HTML5, CSS3, JavaScript, Tailwind CSS
-- **Backend**: PHP, Laravel Framework
-- **Database**: MySQL
+- **Database**: The project must use MySQL as the database system.
 
 ## Getting Started
+
+To get started with the project, follow these steps:
 
 ### Prerequisites
 - Git
