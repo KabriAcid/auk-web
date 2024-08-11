@@ -3,7 +3,7 @@
 This repository contains the source code and documentation for the revamp of the Al-Qalam University Katsina (AUK) official website.
 
 ## Project Overview
-The goal of this project is to enhance the current AUK website by improving its design, usability, and functionality. This includes a modern user interface, responsive design, and additional features to better serve students, faculty, and visitors.
+The goal of this project is to enhance the current AUK website by improving its design, usability, and functionality. Key improvements include a modern user interface, responsive design, and additional features to better serve students, faculty, and visitors.
 
 ## Features
 - Modern and responsive design
@@ -11,10 +11,11 @@ The goal of this project is to enhance the current AUK website by improving its 
 - Enhanced accessibility
 - Integration with university systems
 - Content management capabilities
+- Optimized performance and security
 
 ## Branch Naming Conventions
 
-To maintain consistency and clarity in our version control, we follow these branch naming conventions:
+To maintain consistency and clarity in version control, we follow these branch naming conventions:
 
 ### General Guidelines
 - Use **lowercase letters** and **hyphens** to separate words (e.g., `feature/username`).
@@ -23,37 +24,35 @@ To maintain consistency and clarity in our version control, we follow these bran
 ### Prefixes
 - **feature/**: New features or enhancements.
   - Example: `feature/username`
-- **ui/**: Fixes for non-critical issues.
-  - Example: `ui/fix-footer-alignment`
-- **backend/**: Urgent or critical fixes that need to be addressed immediately.
+- **ui/**: Fixes for non-critical UI issues.
+  - Example: `ui/username`
+- **backend/**: Urgent or critical backend fixes.
   - Example: `backend/username`
 - **chore/**: Maintenance tasks or refactoring.
   - Example: `chore/username`
-
+- **release/**: Release-related branches.
+  - Example: `release/1.2.0`
 
 ### Examples
-- `feature/KabriAcid`
-- `ui/5678-fix-crash-on-login`
-- `backend/urgent-security-patch`
-- `release/1.2.0`
+- `feature/new-user-profile`
+- `ui/fix-footer-alignment`
+- `backend/fix-authentication-issue`
+- `chore/update-dependencies`
+- `release/2.0.0`
 
 ### Consistency
-- All contributors are expected to adhere to these conventions for clarity and traceability.
-
-This ensures a consistent and understandable workflow, making collaboration smoother for everyone involved. Please make sure to follow these conventions when creating new branches.
-
+- All contributors are expected to adhere to these conventions to ensure clarity and traceability. Consistent naming helps streamline the development process and facilitates smoother collaboration.
 
 ## Technologies Used
-- HTML5, CSS3, JavaScript
-- PHP
-- Laravel Framework
-- MySQL
-- Bootstrap
+- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap
+- **Backend**: PHP, Laravel Framework
+- **Database**: MySQL
 
 ## Getting Started
+
 ### Prerequisites
 - Git
-- PHP
+- PHP (>= 7.4)
 - Composer
 - Node.js and npm
 
