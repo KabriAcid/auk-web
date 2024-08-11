@@ -23,12 +23,12 @@ To maintain consistency and clarity in our version control, we follow these bran
 ### Prefixes
 - **feature/**: New features or enhancements.
   - Example: `feature/user-authentication`
-- **ui/**: Fixes for non-critical issues.
-  - Example: `ui/username`
+- **bugfix/**: Fixes for non-critical issues.
+  - Example: `bugfix/fix-footer-alignment`
 - **hotfix/**: Urgent or critical fixes that need to be addressed immediately.
-  - Example: `hotfix/security-patch`
+  - Example: `hotfix/username`
 - **chore/**: Maintenance tasks or refactoring.
-  - Example: `chore/update-dependencies`
+  - Example: `chore/username`
 
 
 ### Examples
