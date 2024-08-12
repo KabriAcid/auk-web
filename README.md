@@ -168,3 +168,4 @@ For deployment to a production environment, follow these additional steps:
    ```sh
    npm run prod
    ```
+#### AUTHORS
