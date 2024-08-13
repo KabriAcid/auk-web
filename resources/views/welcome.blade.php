@@ -23,7 +23,7 @@
             <p class="text-sm text-gray-500">ALONG DUTSINMA ROAD, KATSINA, KATSINA.</p>
         </div>
         <div class="card-body mb-4">
-            <p class="text-lg" style="color: green";>Laravel has been installed successfully.</p>
+            <p class="text-lg" style="color: #";>Laravel has been installed successfully.</p>
         </div>
         <div class="card-footer text-gray-600 text-sm">
             <p>&copy; Copyright <?= date('Y');?> @ AUK</p>

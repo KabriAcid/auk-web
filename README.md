@@ -46,6 +46,9 @@ Ensure you have the following installed on your system:
 - [Composer](https://getcomposer.org/download/)
 - [Node.js and npm](https://nodejs.org/en/download/)
 - [MySQL](https://dev.mysql.com/downloads/)
+
+- PDO (PHP Data Object) is mandatory for this project, no use of Procedural PHP.
+
 ### Installation
 
 1. **Clone the Repository**
@@ -169,3 +172,4 @@ For deployment to a production environment, follow these additional steps:
    npm run prod
    ```
 #### AUTHORS
+
