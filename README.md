@@ -174,3 +174,4 @@ For deployment to a production environment, follow these additional steps:
 #### AUTHORS
 
 Abdullahi Abubakar Kabri - kabriacid01@gmail.com
+Mohammed Mubarak Sani  - mohammedmubaraksani@gmail.com 
