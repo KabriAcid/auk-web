@@ -220,5 +220,6 @@ For deployment to a production environment, follow these additional steps:
 
 ### AUTHORS
 
-Abdullahi Abubakar Kabri - kabriacid01@gmail.com.<br>
-Mohammed Mubarak Sani - mohammedmubaraksani@gmail.com
+- Abdullahi Abubakar Kabri - kabriacid01@gmail.com
+- Mohammed Mubarak Sani - mohammedmubaraksani@gmail.com
+- - **Abdulrahman Kalli Mustapha** - [kmustapha9564@gmail.com](https://github.com/K-Musty) ~ [LinkedIn](https://www.linkedin.com/in/abdulrahmankallimustapha/) ~ [@KMusty_](https://twitter.com/KMusty_):
