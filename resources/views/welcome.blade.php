@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
 </head>
-<body>
+<body style="font-family:figtree;">
     <!-- header -->
     @include('partials.nav')
     <!-- Main Body -->
@@ -79,8 +79,6 @@
             </div>
         </div>
     </section>
-
-
 
 
 
