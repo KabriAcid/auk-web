@@ -9,10 +9,6 @@
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"
     },
-    "repositories": {
-        "type": "composer", 
-        "url": "https://repo.packagist.org"
-    },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",
         "fakerphp/faker": "^1.23",
