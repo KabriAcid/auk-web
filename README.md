@@ -46,6 +46,10 @@ Ensure you have the following installed on your system:
 -   [Composer](https://getcomposer.org/download/)
 -   [Node.js and npm](https://nodejs.org/en/download/)
 -   [MySQL](https://dev.mysql.com/downloads/)
+-   [Laravel](https://laravel.com/docs/8.x/installation)
+-   [Tailwind CSS](https://tailwindcss.com/docs/installation)
+-   [Visual Studio Code](https://code.visualstudio.com/)
+-   [GitHub Desktop](https://desktop.github.com/)
 
 -   PDO (PHP Data Object) is mandatory for this project, no use of Procedural PHP.
 
