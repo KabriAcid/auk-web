@@ -46,8 +46,12 @@ Ensure you have the following installed on your system:
 -   [Composer](https://getcomposer.org/download/)
 -   [Node.js and npm](https://nodejs.org/en/download/)
 -   [MySQL](https://dev.mysql.com/downloads/)
+-   [Laravel](https://laravel.com/docs/8.x/installation)
+-   [Tailwind CSS](https://tailwindcss.com/docs/installation)
+-   [Visual Studio Code](https://code.visualstudio.com/)
+-   [GitHub Desktop](https://desktop.github.com/)
 
--   PDO (PHP Data Object) is mandatory for this project, no use of Procedural PHP.
+-   **PDO (PHP Data Object)** is mandatory for this project, no use of Procedural PHP.
 
 ### Installation
 
@@ -217,6 +221,30 @@ For deployment to a production environment, follow these additional steps:
 
 -   The use of [Blackbox](https://blackbox.com) is required for generating faster and standardized commit messages.
 -   This will ensure consistency and save time during the commit process.
+
+## Color Palettes
+
+### Al-Qalam University Katsina Logo Palette
+This palette is based on the colors from the Al-Qalam University Katsina logo:
+
+- **Cream:** `#f3ecc8` - Used in the background and banner.
+- **Green:** `#3c8542` - Found in the text "AL-QALAM UNIVERSITY KATSINA" and the ribbon.
+- **Maroon:** `#8e2b1a` - Seen in the central emblem with the Arabic script.
+
+### Primary Color Palette
+This palette is based on the primary color `#93152b`:
+
+- **Primary Color:** `#93152b` - A deep maroon, rich and bold.
+- **Complementary Color:** `#3c8542` - A contrasting green, matching the text and ribbon in the logo.
+- **Accent Color:** `#f3ecc8` - A soft cream, providing a subtle background contrast.
+
+### Monochromatic Palette
+This palette includes a simple combination of white, black, and gray:
+
+- **White:** `#FFFFFF` - Pure white, ideal for backgrounds or highlights.
+- **Black:** `#000000` - Pure black, perfect for text or strong contrasts.
+- **Gray:** `#808080` - A balanced mid-gray, suitable for neutral areas or subtle contrasts.
+
 
 ### AUTHORS
 
