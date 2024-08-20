@@ -51,7 +51,7 @@ Ensure you have the following installed on your system:
 -   [Visual Studio Code](https://code.visualstudio.com/)
 -   [GitHub Desktop](https://desktop.github.com/)
 
--   PDO (PHP Data Object) is mandatory for this project, no use of Procedural PHP.
+-   **PDO (PHP Data Object)** is mandatory for this project, no use of Procedural PHP.
 
 ### Installation
 
