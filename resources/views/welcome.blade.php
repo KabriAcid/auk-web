@@ -35,24 +35,15 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="{{ asset('images/carousel6.jpg') }}" class="d-block w-100" alt="carousel Image 1">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Beautiful Campus</h5>
-                            <p>Our campus offers a serene and conducive environment for learning.</p>
-                        </div>
+                       
                     </div>
                     <div class="carousel-item">
                         <img src="{{ asset('images/carousel7.jpg') }}" class="d-block w-100" alt="carousel Image 2">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Modern Facilities</h5>
-                            <p>State-of-the-art facilities for our students.</p>
-                        </div>
+                       
                     </div>
                     <div class="carousel-item">
                         <img src="{{ asset('images/carousel8.jpg') }}" class="d-block w-100" alt="carousel Image 3">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Student Life</h5>
-                            <p>A vibrant community with various student activities.</p>
-                        </div>
+                       
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#campusCarousel" role="button" data-slide="prev">
