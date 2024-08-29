@@ -36,7 +36,7 @@
         </div>
     </div>
     <div>
-        <ul class="bottom-nav" >
+        <ul class="bottom-nav text-capitalize">
             <li><a href="#">Admissions</a></li>
             <li><a href="#">Events</a></li>
             <li><a href="#">Academics</a></li>
