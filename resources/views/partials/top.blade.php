@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al-Qalam University Katsina</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Al-Qalam University Katsina is a private Islamic university in Nigeria offering a range of undergraduate and postgraduate programs with a focus on Islamic values and modern education.">
+    <meta name="keywords" content="Al-Qalam University Katsina, Islamic University, Nigerian University, higher education, Islamic studies, undergraduate programs, postgraduate programs">
+    <meta name="author" content="Al-Qalam University Katsina">
+    <meta property="og:title" content="Al-Qalam University Katsina">
+    <meta property="og:description" content="Discover Al-Qalam University Katsina, a leading private Islamic university in Nigeria that blends Islamic teachings with modern education to offer a variety of programs.">
+    <meta property="og:image" content="URL_to_image.jpg"> <!-- Replace with actual image URL -->
+    <meta property="og:url" content="https://www.auk.edu.ng">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Al-Qalam University Katsina">
+    <meta name="twitter:description" content="Explore Al-Qalam University Katsina, where Islamic values meet modern education. Offering diverse undergraduate and postgraduate programs in Nigeria.">
+    <meta name="twitter:image" content="URL_to_image.jpg"> <!-- Replace with actual image URL -->
+
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
 
