@@ -251,4 +251,5 @@ This palette includes a simple combination of white, black, and gray:
 - Abdullahi Abubakar Kabri - kabriacid01@gmail.com
 - Mohammed Mubarak Sani - mohammedmubaraksani@gmail.com
 - Al-Amin Bashir Babuga - alameenbabuga@gmail.com
-- **Abdulrahman Kalli Mustapha** - [kmustapha9564@gmail.com](https://github.com/K-Musty) ~ [LinkedIn](https://www.linkedin.com/in/abdulrahmankallimustapha/) ~ [@KMusty_](https://twitter.com/KMusty_):
+- Muhammad Musa Jidda - [muhammadmjidder8@gmail.com](https://github.com/Musajidda) ~ [LinkedIn](https://www.linkedin.com/in/musa-muhammad-jidda-6073a3268/) ~ [@Musajidda6236](https://twitter.com/Musajidda6236)
+- Abdulrahman Kalli Mustapha - [kmustapha9564@gmail.com](https://github.com/K-Musty) ~ [LinkedIn](https://www.linkedin.com/in/abdulrahmankallimustapha/) ~ [@KMusty_](https://twitter.com/KMusty_)
