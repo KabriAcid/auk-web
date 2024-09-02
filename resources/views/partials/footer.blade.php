@@ -4,7 +4,7 @@
         <div class="footer-top">
             <img src="{{ asset('images/alqalam_logo-removebg-preview.png') }}" alt="University Logo" class="footer-logo">
             <div class="footer-title">
-                <h3>Faculty of Computing and Information Science</h3>
+                <h3> Faculty of Computing and Information Science</h3>
                 <h4>Al-Qalam University Katsina</h4>
             </div>
         </div>
