@@ -75,3 +75,35 @@ CREATE TABLE Payments (
     session VARCHAR(255),
     semester VARCHAR(255)
 );
+
+-- Add Foreign Keys for Departments Table
+ALTER TABLE Departments
+ADD FOREIGN KEY (college_id) REFERENCES Colleges(college_id);
+
+-- Add Foreign Keys for Courses Table
+ALTER TABLE Courses
+ADD FOREIGN KEY (department_id) REFERENCES Departments(department_id);
+
+-- Add Foreign Keys for Students Table
+ALTER TABLE Students
+ADD FOREIGN KEY (department_id) REFERENCES Departments(department_id),
+ADD FOREIGN KEY (course_id) REFERENCES Courses(id);
+
+-- Add Foreign Keys for Course Management Table
+ALTER TABLE Course_Management
+ADD FOREIGN KEY (student_id) REFERENCES Students(student_id),
+ADD FOREIGN KEY (course_id) REFERENCES Courses(id);
+
+-- Add Foreign Keys for Course Registration Table
+ALTER TABLE Course_Registration
+ADD FOREIGN KEY (student_id) REFERENCES Students(student_id),
+ADD FOREIGN KEY (course_id) REFERENCES Courses(id);
+
+-- Add Foreign Keys for Results Table
+ALTER TABLE Results
+ADD FOREIGN KEY (student_id) REFERENCES Students(student_id),
+ADD FOREIGN KEY (department_id) REFERENCES Departments(department_id);
+
+-- Add Foreign Keys for Payments Table
+ALTER TABLE Payments
+ADD FOREIGN KEY (student_id) REFERENCES Students(student_id);
