@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id('staff_id');
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('email');
+            $table->string('department_id');
+            $table->string('gender');
+            $table->string('status');
             $table->string('phone_number');
             $table->string('rank');
             $table->timestamps();
