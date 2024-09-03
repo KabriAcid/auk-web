@@ -23,21 +23,35 @@ CREATE TABLE Courses (
 
 -- Create Students Table
 CREATE TABLE Students (
-    student_id INT PRIMARY KEY,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255),
-    email VARCHAR(255),
-    level INT,
-    department_id INT, -- This will be a foreign key
-    course_id INT -- This will be a foreign key
+    student_id INT PRIMARY KEY,  
+    department_id INT,           
+    course_id INT,               
+    first_name VARCHAR(255),     
+    last_name VARCHAR(255),      
+    level INT,                   
+    email VARCHAR(255) UNIQUE,   
+    phone_number VARCHAR(255),   
+    date_of_birth DATE,          
+    gender VARCHAR(50),          
+    status VARCHAR(50) DEFAULT '1',
+    address TEXT,                
+    enrollment_date DATE,
 );
 
 -- Create Staff Table
 CREATE TABLE Staff (
-    id INT PRIMARY KEY,
-    name VARCHAR(255),
-    rank VARCHAR(255)
+    staff_id INT PRIMARY KEY, 
+    department_id INT,        
+    first_name VARCHAR(255),  
+    last_name VARCHAR(255),   
+    email VARCHAR(255) UNIQUE,
+    phone_number VARCHAR(255),
+    job_title VARCHAR(255),   
+    status VARCHAR(50) DEFAULT '1',
+    address TEXT,             
+    gender VARCHAR(50),       
 );
+
 
 -- Create Course Management Table
 CREATE TABLE Course_Management (
