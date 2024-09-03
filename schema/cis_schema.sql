@@ -1,3 +1,6 @@
+CREATE DATABASE cis_schema;
+USE cis_schema;
+
 -- Create Colleges Table
 CREATE TABLE Colleges (
     college_id INT PRIMARY KEY,
@@ -34,8 +37,8 @@ CREATE TABLE Students (
     date_of_birth DATE,          
     gender VARCHAR(50),          
     status VARCHAR(50) DEFAULT '1',
-    address TEXT,      
-    enrollment_date DATE
+    address TEXT,                
+    enrollment_date DATE,
 );
 
 -- Create Staff Table
@@ -49,7 +52,7 @@ CREATE TABLE Staff (
     job_title VARCHAR(255),   
     status VARCHAR(50) DEFAULT '1',
     address TEXT,             
-    gender VARCHAR(50)  
+    gender VARCHAR(50),       
 );
 
 
