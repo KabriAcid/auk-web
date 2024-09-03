@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone_number')->nullable();
             $table->string('job_title');
-            $table->foreignId('department_id')->constrained('department', 'department_id')->onDelete('cascade');
+            $table->foreignId('department_id')->constrained('departments', 'department_id')->onDelete('cascade');
             $table->string('status')->default(1);
             $table->text('address')->nullable();
-            $table->string('gender')->nullable(); // Changed from enum to string
+            $table->string('gender')->nullable();
             $table->timestamps();
         });
     }
