@@ -1,25 +1,26 @@
-# Al-Qalam University Katsina Website Revamp
+# Computer & Information Sciences (AUK)
 
-This repository contains the source code and documentation for the revamp of the Al-Qalam University Katsina (AUK) official website.
+This repository contains the source code and documentation for Computer & Information Sciences featuring Al-Qalam University Katsina (AUK).
 
 ## Project Overview
 
-The goal of this project is to enhance the current AUK website by improving its design, usability, and functionality. Key improvements include a modern user interface, responsive design, and additional features to better serve students, faculty, and visitors.
+This project aims to enhance the current AUK website by improving its design, usability, and functionality. Key improvements include a modern user interface, responsive design, and additional features to better serve students, faculty, and visitors.
 
 ## Features
 
--   Modern and responsive design
--   Improved navigation and user experience
--   Enhanced accessibility
--   Integration with university systems
--   Content management capabilities
--   Optimized performance and security
+- Faculty Dashboard: Provides a central overview of key information and metrics.
+- Student Management: Enables officials to manage student data, academic records, and profiles.
+- Course Management: Allows easy course schedules, materials, and related data management.
+- Staff Management: Facilitates staff data management, including profiles, departments, and roles.
+- Announcements: A platform to send out faculty-wide announcements and notifications.
+- Document Management: Secure storage and retrieval of important faculty-related documents.
+- Performance Reports: Generate reports on faculty performance, student achievements, and academic activities.
 
 ## Technologies
 
 The project leverages the following technologies:
 
--   **HTML5**: Markup language for structuring content on the web.
+-   **HTML5**: A markup language for structuring content on the web.
 -   **CSS3**: Style sheet language for describing the presentation of web pages.
 -   **JavaScript**: Programming language for creating interactive and dynamic web content.
 -   **Tailwind CSS**: Utility-first CSS framework for building custom designs.
