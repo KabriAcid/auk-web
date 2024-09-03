@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id('staff_id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email');
-            $table->string('department_id');
-            $table->string('gender');
-            $table->string('status');
-            $table->string('phone_number');
-            $table->string('rank');
+            $table->string('email')->unique();
+            $table->string('phone_number')->nullable();
+            $table->string('job_title');
+            $table->foreignId('department_id')->constrained('department', 'department_id')->onDelete('cascade');
+            $table->string('status')->default(0);
+            $table->text('address')->nullable();
+            $table->string('gender')->nullable(); // Changed from enum to string
             $table->timestamps();
         });
     }
