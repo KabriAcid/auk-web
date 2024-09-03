@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('phone_number')->nullable();
             $table->date('date_of_birth');
             $table->string('gender')->nullable();
+            $table->string('status')->default(1);
             $table->text('address')->nullable();
             $table->date('enrollment_date');
             $table->timestamps();
