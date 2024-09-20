@@ -1,15 +1,53 @@
 -- Create Colleges Table
 CREATE TABLE Colleges (
-    college_id INT PRIMARY KEY,
-    college_name VARCHAR(255)
+    college_id INT AUTO_INCREMENT PRIMARY KEY,
+    college_name VARCHAR(255),
+    dean_name VARCHAR(255) DEFAULT NULL,
+    dean_welcome_message TEXT DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
-
 -- Create Departments Table
 CREATE TABLE Departments (
-    department_id INT PRIMARY KEY,
+    department_id INT AUTO_INCREMENT PRIMARY KEY,
     department_name VARCHAR(255),
-    college_id INT -- This will be a foreign key
+    college_id INT,
+    hod_name VARCHAR(255) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_college FOREIGN KEY (college_id) REFERENCES Colleges(college_id) ON DELETE CASCADE
 );
+
+-- craete program Tables
+CREATE TABLE `programs` (
+    `program_id` INT AUTO_INCREMENT PRIMARY KEY,  -- Primary key, auto-incrementing INT
+    `program_name` VARCHAR(255) NOT NULL,         -- Name of the program
+    `department_id` INT UNSIGNED NOT NULL,        -- Foreign key to the departments table
+    `created_at` TIMESTAMP NULL DEFAULT NULL,     -- Created at timestamp
+    `updated_at` TIMESTAMP NULL DEFAULT NULL,     -- Updated at timestamp
+    FOREIGN KEY (`department_id`) REFERENCES `departments`(`department_id`) 
+        ON DELETE CASCADE  -- Foreign key constraint with cascading delete
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- create Staff Table 
+CREATE TABLE `staff` (
+    `staff_id` INT AUTO_INCREMENT PRIMARY KEY,       -- Unique identifier for the staff member
+    `first_name` VARCHAR(100) NOT NULL,              -- Staff member's first name
+    `last_name` VARCHAR(100) NOT NULL,               -- Staff member's last name
+    `rank` VARCHAR(50) NOT NULL,                     -- Staff member's rank or title
+    `responsibility` VARCHAR(255),                   -- Staff member's responsibilities
+    `image` VARCHAR(255) NULL,                       -- URL or path to the staff member's profile image
+    `email` VARCHAR(255) UNIQUE NOT NULL,            -- Contact email address
+    `phone` VARCHAR(20) NULL,                        -- Contact phone number
+    `biography` TEXT NULL,                           -- Brief biography
+    `gender` VARCHAR(10) NULL,                       -- Gender of the staff member
+    `department_id` INT UNSIGNED NOT NULL,           -- Foreign key to departments table
+    `created_at` TIMESTAMP NULL DEFAULT NULL,        -- Created at timestamp
+    `updated_at` TIMESTAMP NULL DEFAULT NULL,        -- Updated at timestamp
+    FOREIGN KEY (`department_id`) REFERENCES `departments`(`department_id`) 
+        ON DELETE CASCADE                            -- Foreign key constraint with action on delete
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Create Courses Table
 CREATE TABLE Courses (
@@ -38,19 +76,6 @@ CREATE TABLE Students (
     enrollment_date DATE,
 );
 
--- Create Staff Table
-CREATE TABLE Staff (
-    staff_id INT PRIMARY KEY, 
-    department_id INT,        
-    first_name VARCHAR(255),  
-    last_name VARCHAR(255),   
-    email VARCHAR(255) UNIQUE,
-    phone_number VARCHAR(255),
-    job_title VARCHAR(255),   
-    status VARCHAR(50) DEFAULT '1',
-    address TEXT,             
-    gender VARCHAR(50),       
-);
 
 
 -- Create Course Management Table

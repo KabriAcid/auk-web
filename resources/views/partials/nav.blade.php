@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer and Information Science - Al-Qalam University</title>
+    <title>Computing and Information Sciences - Al-Qalam University</title>
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
 </head>
 
@@ -31,7 +31,7 @@
             <div class="logo-container">
                 <img src="{{ asset('images/logo.jpg') }}" alt="Logo" class="school-logo">
                 <div>
-                    <h1>Computing and Information Science</h1>
+                    <h1>Computing and Information Sciences</h1>
                     <p>Al-Qalam University Katsina</p>
                 </div>
             </div>
@@ -70,6 +70,7 @@
                 <li><a href="#">Events</a></li>
                 <li><a href="#">Academics</a></li>
                 <li><a href="#">Research</a></li>
+                <li><a href="{{route('staff-list')}}">staff</a></li>
                 <li><a href="#">Students</a></li>
             </ul>
         </nav>

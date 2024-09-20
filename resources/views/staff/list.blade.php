@@ -14,7 +14,7 @@
 
     <ul>
         @foreach ($staff as $member)
-            <li>{{ $member->name }} - {{ $member->email }}</li>
+            <li>{{ $member->last_name }} {{ $member->first_name }} - {{ $member->email }} </li>
         @endforeach
     </ul>
 </body>

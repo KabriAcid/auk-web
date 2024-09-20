@@ -1,12 +1,44 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StaffController;
+use App\Http\Controllers\Admin\StaffController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\ProgramController;
+use App\Http\Controllers\Admin\CoursesController;
+use App\Http\Controllers\Admin\CollegeController;
 
+// Admin routes
+Route::prefix('admin')->name('admin.')->group(function () {
+    // Dashboard
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    
+    // College routes
+    Route::resource('colleges', CollegeController::class);
+
+    // Department routes
+    Route::resource('departments', DepartmentController::class)->except(['show']);
+
+    // program routes 
+    Route::resource('programs', ProgramController::class)->except(['show']);
+
+    
+    // Course routes
+    Route::resource('courses', CoursesController::class)->except(['show']);
+
+    // Staff routes
+    Route::get('staff', [StaffController::class, 'index'])->name('staff.index');
+    Route::get('staff/create', [StaffController::class, 'create'])->name('staff.create');
+    Route::post('staff', [StaffController::class, 'store'])->name('staff.store');
+    Route::get('staff/{id}/edit', [StaffController::class, 'edit'])->name('staff.edit');
+    Route::put('staff/{id}', [StaffController::class, 'update'])->name('staff.update');
+    Route::delete('staff/{id}', [StaffController::class, 'destroy'])->name('staff.destroy');
+});
+
+// Home route
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/staff-list', [StaffController::class, 'showStaffList'])->name('staff-list');
-Route::get('/add-staff', [StaffController::class, 'addStaffForm'])->name('staff.add');
-Route::post('/add-staff', [StaffController::class, 'saveStaff'])->name('staff.save');
+// Public staff listing route (if needed)
+Route::get('/staff', [StaffController::class, 'listStaff'])->name('staff-list');

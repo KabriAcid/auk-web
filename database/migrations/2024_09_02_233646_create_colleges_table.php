@@ -6,22 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('colleges', function (Blueprint $table) {
-            $table->id('college_id');
+            $table->integer('college_id')->autoIncrement(); // Primary key as INT
             $table->string('college_name');
+            $table->string('dean_name')->nullable();
+            $table->text('dean_welcome_message')->nullable();
+            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('colleges');
     }
 };
+
