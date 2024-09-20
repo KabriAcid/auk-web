@@ -9,7 +9,7 @@
                 mission is to provide top-notch education and cutting-edge research opportunities in the fields
                 of computing and information science. We are dedicated to creating an environment that
                 encourages innovation, critical thinking, and lifelong learning.</p>
-            <a href="#" class="btn">Read More</a>
+            <a href="#" class="btn">Read More </a>
         </div>
     </div>
 </section>
