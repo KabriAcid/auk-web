@@ -2,42 +2,52 @@
 
 @section('content')
 <h1>Staff List</h1>
-<a href="{{ route('admin.staff.create') }}">Add New Staff</a>
 
-<table>
+<a href="{{ route('admin.staff.create') }}" class="btn btn-primary">Add New Staff</a>
+
+@if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+
+<table class="table">
     <thead>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
-            <th>Phone</th>
-            <th>Rank</th>
+            <th>Phone Number</th>
             <th>Department</th>
+            <th>Rank</th>
+            <th>Responsibility</th>
+            <th>Status</th>
+            <th>Gender</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-    @foreach ($staff as $member)
-    <tr>
-        <td>{{ $member->first_name }}</td>
-        <td>{{ $member->last_name }}</td>
-        <td>{{ $member->email }}</td>
-        <td>{{ $member->phone }}</td> <!-- Assuming you have a 'phone' field in the Staff model -->
-        <td>{{ $member->rank }}</td> <!-- Displaying the staff rank -->
-        <td>{{ $member->department->department_name ?? 'N/A' }}</td> <!-- Assuming staff belongs to a department -->
-        <td>
-            <!-- Edit Staff Link -->
-            <a href="{{ route('admin.staff.edit', $member->staff_id) }}">Edit</a>
-
-            <!-- Delete Staff Form -->
-            <form action="{{ route('admin.staff.destroy', $member->staff_id) }}" method="POST" style="display:inline-block;">
-                @csrf
-                @method('DELETE')
-                <button type="submit" onclick="return confirm('Are you sure you want to delete this staff member?')">Delete</button>
-            </form>
-        </td>
-    </tr>
-    @endforeach
+        @foreach($staff as $member)
+            <tr>
+                <td>{{ $member->first_name }}</td>
+                <td>{{ $member->last_name }}</td>
+                <td>{{ $member->email }}</td>
+                <td>{{ $member->phone }}</td>
+                <td>{{ $member->department->department_name ?? 'N/A' }}</td>
+                <td>{{ $member->rank }}</td>
+                <td>{{ $member->responsibility }}</td>
+                <td>{{ $member->status == 'active' ? 'Active' : 'Inactive' }}</td>
+                <td>{{ $member->gender }}</td>
+                <td>
+                    <a href="{{ route('admin.staff.edit', $member->staff_id) }}" class="btn btn-warning">Edit</a>
+                    <form action="{{ route('admin.staff.destroy', $member->staff_id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this staff?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
     </tbody>
 </table>
+
+{{ $staff->links() }} <!-- Pagination links -->
 @endsection

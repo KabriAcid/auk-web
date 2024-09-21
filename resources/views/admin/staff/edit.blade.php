@@ -8,39 +8,85 @@
 
     <label for="first_name">First Name:</label>
     <input type="text" name="first_name" id="first_name" value="{{ old('first_name', $staff->first_name) }}" required>
+    @error('first_name')
+        <div class="error">{{ $message }}</div>
+    @enderror
 
     <label for="last_name">Last Name:</label>
     <input type="text" name="last_name" id="last_name" value="{{ old('last_name', $staff->last_name) }}" required>
+    @error('last_name')
+        <div class="error">{{ $message }}</div>
+    @enderror
 
     <label for="email">Email:</label>
     <input type="email" name="email" id="email" value="{{ old('email', $staff->email) }}" required>
+    @error('email')
+        <div class="error">{{ $message }}</div>
+    @enderror
 
-    <label for="phone_number">Phone Number:</label>
-    <input type="text" name="phone_number" id="phone_number" value="{{ old('phone_number', $staff->phone_number) }}">
+    <label for="phone">Phone Number:</label>
+    <input type="text" name="phone" id="phone" value="{{ old('phone', $staff->phone) }}">
+    @error('phone')
+        <div class="error">{{ $message }}</div>
+    @enderror
 
-    <label for="job_title">Job Title:</label>
-    <input type="text" name="job_title" id="job_title" value="{{ old('job_title', $staff->job_title) }}" required>
-
-    <label for="department_id">Department ID:</label>
-    <input type="text" name="department_id" id="department_id" value="{{ old('department_id', $staff->department_id) }}" required>
+    <!-- Department Dropdown -->
+    <label for="department_id">Department:</label>
+    <select name="department_id" id="department_id" required>
+        <option value="">Select Department</option>
+        @foreach($departments as $department)
+            <option value="{{ $department->department_id }}" {{ old('department_id', $staff->department_id) == $department->department_id ? 'selected' : '' }}>
+                {{ $department->department_name }}
+            </option>
+        @endforeach
+    </select>
+    @error('department_id')
+        <div class="error">{{ $message }}</div>
+    @enderror
 
     <label for="rank">Rank:</label>
     <input type="text" name="rank" id="rank" value="{{ old('rank', $staff->rank) }}" required>
+    @error('rank')
+        <div class="error">{{ $message }}</div>
+    @enderror
 
     <label for="responsibility">Responsibility:</label>
     <input type="text" name="responsibility" id="responsibility" value="{{ old('responsibility', $staff->responsibility) }}" required>
+    @error('responsibility')
+        <div class="error">{{ $message }}</div>
+    @enderror
 
     <label for="biography">Biography:</label>
     <textarea name="biography" id="biography" rows="4">{{ old('biography', $staff->biography) }}</textarea>
+    @error('biography')
+        <div class="error">{{ $message }}</div>
+    @enderror
 
     <label for="image">Image:</label>
     <input type="file" name="image" id="image">
+    @error('image')
+        <div class="error">{{ $message }}</div>
+    @enderror
 
     <label for="status">Status:</label>
-    <input type="text" name="status" id="status" value="{{ old('status', $staff->status) }}">
+    <select name="status" id="status" required>
+        <option value="active" {{ old('status', $staff->status) == 'active' ? 'selected' : '' }}>Active</option>
+        <option value="inactive" {{ old('status', $staff->status) == 'inactive' ? 'selected' : '' }}>Inactive</option>
+    </select>
+    @error('status')
+        <div class="error">{{ $message }}</div>
+    @enderror
+
 
     <label for="gender">Gender:</label>
-    <input type="text" name="gender" id="gender" value="{{ old('gender', $staff->gender) }}" required>
+    <select name="gender" id="gender" required>
+        <option value="male" {{ old('gender', $staff->gender ?? '') == 'male' ? 'selected' : '' }}>Male</option>
+        <option value="female" {{ old('gender', $staff->gender ?? '') == 'female' ? 'selected' : '' }}>Female</option>
+        <option value="other" {{ old('gender', $staff->gender ?? '') == 'other' ? 'selected' : '' }}>Other</option>
+    </select>
+    @error('gender')
+        <div class="error">{{ $message }}</div>
+    @enderror
 
     <button type="submit">Update Staff</button>
 </form>
