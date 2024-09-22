@@ -16,7 +16,7 @@
                 @endif
                 <h2 class="staff-name">{{ $member->first_name }} {{ $member->last_name }}</h2>
                 <p class="staff-rank">Rank: {{ $member->rank }}</p>
-                <p class="staff-biography">{{ Str::limit($member->biography, 200) }}</p>
+                <p class="staff-biography">{{ Str::limit($member->biography, 150) }}</p>
             </div>
         @endforeach
     </div>
