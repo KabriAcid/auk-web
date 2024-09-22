@@ -3,6 +3,10 @@
 @section('content')
 <h1>Programs List</h1>
 <a href="{{ route('admin.programs.create') }}">Add New Program</a>
+@if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+
 <table>
     <thead>
         <tr>

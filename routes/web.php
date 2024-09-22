@@ -7,22 +7,22 @@ use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\CollegeController;
+use App\Http\Controllers\PublicStaffController;
 
 // Admin routes
 Route::prefix('admin')->name('admin.')->group(function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    
+
     // College routes
     Route::resource('colleges', CollegeController::class);
 
     // Department routes
     Route::resource('departments', DepartmentController::class)->except(['show']);
 
-    // program routes 
+    // Program routes 
     Route::resource('programs', ProgramController::class)->except(['show']);
 
-    
     // Course routes
     Route::resource('courses', CoursesController::class)->except(['show']);
 
@@ -40,5 +40,5 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Public staff listing route (if needed)
-Route::get('/staff', [StaffController::class, 'listStaff'])->name('staff-list');
+// Public staff listing route
+Route::get('/staff', [PublicStaffController::class, 'staffList'])->name('staff-list');

@@ -24,34 +24,40 @@ class StaffController extends Controller
     }
 
     // Store new staff in the database
-   public function store(Request $request)
-{
-    // Validate the request data
-    $request->validate([
-        'first_name' => 'required|string|max:255',
-        'last_name' => 'required|string|max:255',
-        'email' => 'required|email|unique:staff,email',
-        'phone' => 'nullable|string|max:15',
-        'rank' => 'required|string|max:255',
-        'responsibility' => 'required|string|max:255',
-        'department_id' => 'required|exists:departments,department_id',
-        'status' => 'nullable|string|in:active,inactive', // Allow null or specific values
-        'gender' => 'required|in:male,female,other',
-        'biography' => 'nullable|string',
-    ]);
+    public function store(Request $request)
+    {
+        // Validate the request data
+        $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email|unique:staff,email',
+            'phone' => 'nullable|string|max:15',
+            'rank' => 'required|string|max:255',
+            'department_id' => 'required|exists:departments,department_id',
+            'status' => 'nullable|string|in:active,inactive', // Allow null or specific values
+            'gender' => 'required|in:male,female,other',
+            'biography' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:5120', // Image validation
+        ]);
 
-    // Set default status to 'active' if not provided
-    $data = $request->all();
-    $data['status'] = $data['status'] ?? 'active';
+        // Set default status to 'active' if not provided
+        $data = $request->all();
+        $data['status'] = $data['status'] ?? 'active';
 
-    // Log the status being created
-    \Log::info('Creating staff with status: ' . $data['status']);
+        // Handle the image upload
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('public/staff'); // Store in storage/app/public/staff
+            $data['image'] = str_replace('public/', 'storage/', $imagePath); // Make accessible via /storage
+        }
 
-    // Create a new staff record
-    Staff::create($data);
+        // Log the status being created
+        \Log::info('Creating staff with status: ' . $data['status']);
 
-    return redirect()->route('admin.staff.index')->with('success', 'Staff added successfully.');
-}
+        // Create a new staff record
+        Staff::create($data);
+
+        return redirect()->route('admin.staff.index')->with('success', 'Staff added successfully.');
+    }
 
     // Show form to edit staff
     public function edit($id)
@@ -61,7 +67,6 @@ class StaffController extends Controller
         return view('admin.staff.edit', compact('staff', 'departments'));
     }
 
-    // Update staff record in the database
     public function update(Request $request, $id)
     {
         // Validate the request data
@@ -71,26 +76,48 @@ class StaffController extends Controller
             'email' => 'required|email|unique:staff,email,' . $id . ',staff_id',
             'phone' => 'nullable|string|max:15',
             'rank' => 'required|string|max:255',
-            'responsibility' => 'required|string|max:255',
             'department_id' => 'required|exists:departments,department_id',
             'status' => 'required|string|in:active,inactive', // Validate status must be either active or inactive
             'gender' => 'required|in:male,female,other',
             'biography' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:5120', // Image validation
         ]);
-
+    
         // Fetch the staff record by staff_id
         $staff = Staff::where('staff_id', $id)->firstOrFail();
-
-        // Update the staff record with new data
-        $staff->update($request->all());
-
+    
+        // Exclude the image initially
+        $data = $request->except('image');
+    
+        // Check if an image was uploaded, then merge it into $data
+        if ($request->hasFile('image')) {
+            // Delete the old image if necessary
+            if ($staff->image) {
+                \Storage::delete(str_replace('storage/', 'public/', $staff->image)); // Delete old image
+            }
+    
+            // Store new image and merge into $data
+            $imagePath = $request->file('image')->store('public/staff');
+            $data['image'] = str_replace('public/', 'storage/', $imagePath);
+        }
+    
+        // Now update the staff with the merged data
+        $staff->update($data);
+    
         return redirect()->route('admin.staff.index')->with('success', 'Staff updated successfully.');
     }
+    
 
     // Delete a staff record
     public function destroy($id)
     {
         $staff = Staff::where('staff_id', $id)->firstOrFail();
+
+        // Delete the staff's image if it exists
+        if ($staff->image) {
+            \Storage::delete(str_replace('storage/', 'public/', $staff->image)); // Delete image from storage
+        }
+
         $staff->delete();
 
         return redirect()->route('admin.staff.index')->with('success', 'Staff deleted successfully.');
