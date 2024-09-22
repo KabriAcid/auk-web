@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('first_name');                     // Staff member's first name
             $table->string('last_name');                      // Staff member's last name
             $table->string('rank');                          // Staff member's rank or title
-            $table->string('responsibility');                // Staff member's responsibilities
             $table->string('image')->nullable();              // URL or path to the staff member's profile image
             $table->string('email')->unique();                // Contact email address
             $table->string('phone')->nullable();             // Contact phone number

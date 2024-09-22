@@ -4,6 +4,10 @@
 <h1>Department List</h1>
 
 <a href="{{ route('admin.departments.create') }}">Add New Department</a>
+@if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+
 
 <table>
     <thead>

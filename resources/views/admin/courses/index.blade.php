@@ -3,6 +3,10 @@
 @section('content')
 <h1>Courses List</h1>
 <a href="{{ route('admin.courses.create') }}">Add New Course</a>
+@if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+
 
 <table>
     <thead>

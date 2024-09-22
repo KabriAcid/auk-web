@@ -47,13 +47,7 @@
     @error('rank')
         <div class="error">{{ $message }}</div>
     @enderror
-
-    <label for="responsibility">Responsibility:</label>
-    <input type="text" name="responsibility" id="responsibility" value="{{ old('responsibility') }}" required>
-    @error('responsibility')
-        <div class="error">{{ $message }}</div>
-    @enderror
-
+    
     <label for="biography">Biography:</label>
     <textarea name="biography" id="biography" rows="4">{{ old('biography') }}</textarea>
     @error('biography')

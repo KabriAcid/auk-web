@@ -1,0 +1,45 @@
+.staff-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between staff members */
+    margin: 20px 0;
+}
+
+.staff-member {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Smooth hover effect */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.staff-member:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.staff-image {
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
+    margin-bottom: 10px; /* Space below the image */
+}
+
+.staff-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.staff-rank {
+    color: #555; /* Slightly darker for rank text */
+}
+
+.staff-biography {
+    font-size: 0.9em;
+    color: #666; /* Lighter color for biography */
+}

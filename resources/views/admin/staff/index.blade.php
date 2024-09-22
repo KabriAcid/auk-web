@@ -14,11 +14,11 @@
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Image</th> <!-- Updated for Image -->
             <th>Email</th>
             <th>Phone Number</th>
             <th>Department</th>
             <th>Rank</th>
-            <th>Responsibility</th>
             <th>Status</th>
             <th>Gender</th>
             <th>Actions</th>
@@ -29,11 +29,17 @@
             <tr>
                 <td>{{ $member->first_name }}</td>
                 <td>{{ $member->last_name }}</td>
+                <td>
+                    @if($member->image)
+                        <img src="{{ asset($member->image) }}" alt="{{ $member->first_name }}" width="80" height="80" style="object-fit: cover; border-radius: 50%;">
+                    @else
+                        No Image
+                    @endif
+                </td>
                 <td>{{ $member->email }}</td>
                 <td>{{ $member->phone }}</td>
                 <td>{{ $member->department->department_name ?? 'N/A' }}</td>
                 <td>{{ $member->rank }}</td>
-                <td>{{ $member->responsibility }}</td>
                 <td>{{ $member->status == 'active' ? 'Active' : 'Inactive' }}</td>
                 <td>{{ $member->gender }}</td>
                 <td>

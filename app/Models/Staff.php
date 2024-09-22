@@ -12,7 +12,7 @@ class Staff extends Model
     // Specify the table name
     protected $table = 'staff';
 
-    // Specify the primary key (assuming 'staff_id' is the primary key in your table)
+    // Specify the primary key
     protected $primaryKey = 'staff_id';
 
     // Set the primary key as an auto-incrementing integer
@@ -26,14 +26,25 @@ class Staff extends Model
 
     // Specify which fields are mass-assignable
     protected $fillable = [
-        'first_name', 'last_name', 'rank', 'responsibility', 
-        'image', 'email', 'phone', 'biography', 'gender', 
-        'department_id', 'status' // Include 'status' field
+        'first_name', 'last_name', 'rank', 'biography', 'image', 'email', 'phone', 'gender', 'status','department_id'
     ];
 
-    // Relationship with the Department model
-    public function department()
+     // Relationship with the Department model
+     public function department()
+     {
+         return $this->belongsTo(Department::class, 'department_id', 'department_id');
+     }
+ 
+
+    // Method to get staff data for public display
+    public function toPublicArray()
     {
-        return $this->belongsTo(Department::class, 'department_id', 'department_id');
+        return [
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
+            'rank' => $this->rank,
+            'biography' => $this->biography,
+            'image' => $this->image,
+        ];
     }
 }
