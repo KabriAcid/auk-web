@@ -6,6 +6,7 @@
 <table>
     <thead>
         <tr>
+            <th>#</th>
             <th>College Name</th>
             <th>Dean Name</th>
             <th>Dean Image</th>
@@ -14,18 +15,19 @@
         </tr>
     </thead>
     <tbody>
-    @foreach ($colleges as $college)
+    @foreach ($colleges as $index => $college)
     <tr>
+        <td>{{ $index + 1 }}</td>
         <td>{{ $college->college_name }}</td>
         <td>{{ $college->dean_name }}</td>
         <td>
             @if ($college->dean_image)
-                <img src="{{ asset('storage/' . $college->dean_image) }}" alt="{{ $college->dean_name }}" style="width: 50px; height: auto;">
+            <img src="{{ asset('storage/' . $college->dean_image) }}" alt="{{ $college->dean_name }}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
             @else
                 No Image
             @endif
         </td>
-        <td>{{ $college->dean_welcome_message }}</td> <!-- Updated to use dean_welcome_message -->
+        <td>{{ $college->dean_welcome_message }}</td>
         <td>
             <a href="{{ route('admin.colleges.edit', $college->college_id) }}">Edit</a>
             <form action="{{ route('admin.colleges.destroy', $college->college_id) }}" method="POST" style="display:inline;">

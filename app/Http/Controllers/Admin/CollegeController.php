@@ -28,7 +28,7 @@ class CollegeController extends Controller
         $request->validate([
             'college_name' => 'required|string|max:255',
             'dean_name' => 'nullable|string|max:255',
-            'dean_welcome_message' => 'nullable|string', // Updated to match the migration
+            'dean_welcome_message' => 'nullable|string',
             'dean_image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
         ]);
         
@@ -39,7 +39,6 @@ class CollegeController extends Controller
         }
         
         College::create($data);
-        
 
         return redirect()->route('admin.colleges.index')->with('success', 'College added successfully!');
     }
@@ -53,42 +52,47 @@ class CollegeController extends Controller
 
     // Update the college
     public function update(Request $request, $id)
-{
-    $request->validate([
-        'college_name' => 'required|string|max:255',
-        'dean_name' => 'nullable|string|max:255',
-        'dean_welcome_message' => 'nullable|string', // Ensures this is validated
-        'dean_image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
-    ]);
+    {
+        $request->validate([
+            'college_name' => 'required|string|max:255',
+            'dean_name' => 'nullable|string|max:255',
+            'dean_welcome_message' => 'nullable|string',
+            'dean_image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+        ]);
 
-    $college = College::findOrFail($id);
+        $college = College::findOrFail($id);
 
-    $data = $request->all();
+        $data = $request->all();
 
-    if ($request->hasFile('dean_image')) {
-        if ($college->dean_image) {
-            Storage::disk('public')->delete($college->dean_image);
+        if ($request->hasFile('dean_image')) {
+            if ($college->dean_image) {
+                Storage::disk('public')->delete($college->dean_image);
+            }
+            $data['dean_image'] = $request->file('dean_image')->store('images', 'public');
         }
-        $data['dean_image'] = $request->file('dean_image')->store('images', 'public');
+
+        $college->update($data);
+
+        return redirect()->route('admin.colleges.index')->with('success', 'College updated successfully!');
     }
-
-    $college->update($data);
-
-    return redirect()->route('admin.colleges.index')->with('success', 'College updated successfully!');
-}
-
 
     // Delete a college
     public function destroy($id)
     {
         $college = College::findOrFail($id);
         
-        // Delete the dean image if exists
         if ($college->dean_image) {
             Storage::disk('public')->delete($college->dean_image);
         }
 
         $college->delete();
         return redirect()->route('admin.colleges.index')->with('success', 'College deleted successfully!');
+    }
+
+    // Show the dean's message for public view
+    public function showDeanMessage()
+    {
+        $college = College::first(); // Get the first college or modify as needed
+        return view('home', compact('college')); // Main view that includes all sections
     }
 }

@@ -19,6 +19,22 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
+                    <h5 class="card-title">Departments</h5>
+                    <p class="card-text">{{ $departmentCount }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Programs</h5>
+                    <p class="card-text">{{ $programCount }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
                     <h5 class="card-title">Students</h5>
                     <p class="card-text">{{ $studentCount }}</p>
                 </div>

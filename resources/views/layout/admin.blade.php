@@ -14,6 +14,7 @@
         <a href="{{ route('admin.programs.index') }}">Programs</a>
         <a href="{{ route('admin.staff.index') }}">Staff Management</a>
         <a href="{{ route('admin.courses.index') }}">Courses</a>
+        <a href="{{ route('admin.events.index') }}">Events</a>
         <!-- Add other links as needed -->
     </div>
 

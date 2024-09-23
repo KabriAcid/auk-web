@@ -12,9 +12,10 @@
 <table class="table">
     <thead>
         <tr>
+            <th>#</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Image</th> <!-- Updated for Image -->
+            <th>Image</th>
             <th>Email</th>
             <th>Phone Number</th>
             <th>Department</th>
@@ -25,8 +26,9 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($staff as $member)
+        @foreach($staff as $index => $member)
             <tr>
+                <td>{{ $index + 1 }}</td>
                 <td>{{ $member->first_name }}</td>
                 <td>{{ $member->last_name }}</td>
                 <td>
