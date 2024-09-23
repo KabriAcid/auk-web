@@ -38,7 +38,7 @@
             <div>
                 <ul class="bottom-nav text-capitalize">
                     <li><a href="#">Admissions</a></li>
-                    <li><a href="#">Events</a></li>
+                    <li><a href="{{ route('events.index') }}">Events</a></li>
                     <li><a href="#">Academics</a></li>
                     <li><a href="#">Research</a></li>
                     <li><a href="{{route('staff-list')}}">staff</a></li>

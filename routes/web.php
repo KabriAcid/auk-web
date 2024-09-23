@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\CollegeController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\PublicStaffController;
 
 // Admin routes
@@ -26,6 +27,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Course routes
     Route::resource('courses', CoursesController::class)->except(['show']);
 
+    // events routes
+    Route::resource('events', EventController::class);
+
     // Staff routes
     Route::get('staff', [StaffController::class, 'index'])->name('staff.index');
     Route::get('staff/create', [StaffController::class, 'create'])->name('staff.create');
@@ -42,3 +46,11 @@ Route::get('/', function () {
 
 // Public staff listing route
 Route::get('/staff', [PublicStaffController::class, 'staffList'])->name('staff-list');
+
+// Route to display the dean's welcome message to the public
+Route::get('/', [CollegeController::class, 'showDeanMessage'])->name('home');
+
+Route::get('/events', [EventController::class, 'publicindex'])->name('events.index');
+Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
+
+

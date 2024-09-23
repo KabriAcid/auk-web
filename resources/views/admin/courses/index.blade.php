@@ -7,10 +7,10 @@
     <div class="alert alert-success">{{ session('success') }}</div>
 @endif
 
-
 <table>
     <thead>
         <tr>
+            <th>#</th>
             <th>Course Code</th>
             <th>Title</th>
             <th>Units</th>
@@ -19,8 +19,9 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($courses as $course)
+        @foreach ($courses as $index => $course)
         <tr>
+            <td>{{ $index + 1 }}</td>
             <td>{{ $course->course_code }}</td>
             <td>{{ $course->title }}</td>
             <td>{{ $course->unit }}</td>
