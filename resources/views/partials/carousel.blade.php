@@ -3,15 +3,15 @@
             <div id="campusCarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images\DSC_0070.JPG') }}" class="d-block w-100" alt="carousel Image 1">
+                        <img src="{{ asset('images\IMG_0030.JPG') }}" class="d-block w-100" alt="carousel Image 1">
 
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images\DSC_0024.JPG') }}" class="d-block w-100" alt="carousel Image 2">
+                        <img src="{{ asset('images\IMG_0524.JPG') }}" class="d-block w-100" alt="carousel Image 2">
 
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images\IMG_0030.JPG') }}" class="d-block w-100" alt="carousel Image 3">
+                        <img src="{{ asset('images\IMG_0501.JPG') }}" class="d-block w-100" alt="carousel Image 3">
 
                     </div>
                 </div>
