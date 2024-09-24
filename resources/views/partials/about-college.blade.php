@@ -24,7 +24,7 @@
                 innovation, critical thinking, and lifelong learning.</p>
             <div class="row text-center">
                 <div class="col-4">
-                    <h3>4</h3>
+                    <h3>2</h3>
                     <p>Departments</p>
                 </div>
                 <div class="col-4">

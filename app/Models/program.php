@@ -13,8 +13,9 @@ class Program extends Model
 
     protected $primaryKey = 'program_id'; // Specify the primary key
 
+    // Add 'program_description' to the fillable properties
     protected $fillable = [
-        'program_name', 'department_id'
+        'program_name', 'department_id', 'program_description'
     ];
 
     /**

@@ -7,7 +7,7 @@
     @include('partials.dean-message', ['college' => $college]) <!-- Pass the college variable -->
     @include('partials.featured-news')
     @include('partials.about-college')
-    @include('partials.academic-programmes')
+    @include('partials.academic-programmes', ['programs' => $programs])
     @include('partials.quick-links')
 </main>
 </body>

@@ -52,5 +52,7 @@ Route::get('/', [CollegeController::class, 'showDeanMessage'])->name('home');
 
 Route::get('/events', [EventController::class, 'publicindex'])->name('events.index');
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
+Route::get('/', [ProgramController::class, 'showPrograms'])->name('home');
+
 
 
