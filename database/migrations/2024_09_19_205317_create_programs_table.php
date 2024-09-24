@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('program_id');                   // Primary key, auto-incrementing INT
             $table->string('program_name');             // Name of the program
             $table->unsignedBigInteger('department_id'); // Foreign key to departments table
+            $table->text('program_description')->nullable(); // New column for program description
             $table->timestamps();                       // Created at and updated at timestamps
 
             // Foreign key constraint linking to the departments table
