@@ -28,7 +28,7 @@ class ProgramController extends Controller
         $request->validate([
             'program_name' => 'required|string|max:255',
             'department_id' => 'required|exists:departments,department_id',
-            'program_description' => 'nullable|string',  // Validation for program description
+            'program_description' => 'nullable|string',  
         ]);
 
         // Create a new program with the validated data
@@ -40,8 +40,8 @@ class ProgramController extends Controller
 
     public function edit($id)
     {
-        $program = Program::findOrFail($id); // Find the program or fail
-        $departments = Department::all();    // Fetch all departments
+        $program = Program::findOrFail($id); 
+        $departments = Department::all();    
         return view('admin.programs.edit', compact('program', 'departments'));
     }
 
@@ -51,7 +51,7 @@ class ProgramController extends Controller
         $request->validate([
             'program_name' => 'required|string|max:255',
             'department_id' => 'required|exists:departments,department_id',
-            'program_description' => 'nullable|string',  // Validate description as well
+            'program_description' => 'nullable|string',  
         ]);
 
         // Find the program and update it with the validated data
@@ -73,8 +73,8 @@ class ProgramController extends Controller
 
     public function showPrograms()
     {
-        $programs = Program::all(); // Fetch all programs
-        $college = College::first(); // Fetch the college data (assuming you have only one college)
+        $programs = Program::all(); 
+        $college = College::first(); 
         
         return view('home', compact('programs', 'college'));
     }

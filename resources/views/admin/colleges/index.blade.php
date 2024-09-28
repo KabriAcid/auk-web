@@ -1,8 +1,8 @@
 @extends('layout.admin')
 
 @section('content')
-<h1>Colleges List</h1>
-<a href="{{ route('admin.colleges.create') }}">Add New College</a>
+<h2>Colleges List</h2>
+<a href="{{ route('admin.colleges.create') }}"  class="add-link">Add New College</a>
 <table>
     <thead>
         <tr>
@@ -28,7 +28,7 @@
             @endif
         </td>
         <td>{{ $college->dean_welcome_message }}</td>
-        <td>
+        <td class="table-actions">
             <a href="{{ route('admin.colleges.edit', $college->college_id) }}">Edit</a>
             <form action="{{ route('admin.colleges.destroy', $college->college_id) }}" method="POST" style="display:inline;">
                 @csrf

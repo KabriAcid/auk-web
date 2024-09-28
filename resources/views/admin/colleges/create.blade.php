@@ -10,8 +10,8 @@
     <label for="dean_name">Dean Name:</label>
     <input type="text" name="dean_name" id="dean_name">
 
-    <label for="dean_welcome_message">Dean's Welcome Message:</label> <!-- Corrected name -->
-    <textarea name="dean_welcome_message" id="dean_welcome_message"></textarea> <!-- Corrected name -->
+    <label for="dean_welcome_message">Dean's Welcome Message:</label>
+    <textarea name="dean_welcome_message" id="dean_welcome_message"></textarea> 
 
     <label for="dean_image">Dean Image:</label>
     <input type="file" name="dean_image" id="dean_image">

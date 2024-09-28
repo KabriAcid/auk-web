@@ -1,8 +1,8 @@
 @extends('layout.admin')
 
 @section('content')
-<h1>Courses List</h1>
-<a href="{{ route('admin.courses.create') }}">Add New Course</a>
+<h2>Courses List</h2>
+<a href="{{ route('admin.courses.create') }}"  class="add-link">Add New Course</a>
 @if(session('success'))
     <div class="alert alert-success">{{ session('success') }}</div>
 @endif
@@ -30,7 +30,7 @@
                     {{ $department->department_name }}@if (!$loop->last), @endif
                 @endforeach
             </td>
-            <td>
+            <td class="table-actions">
                 <a href="{{ route('admin.courses.edit', $course->id) }}">Edit</a>
                 <form action="{{ route('admin.courses.destroy', $course->id) }}" method="POST" style="display:inline-block;">
                     @csrf

@@ -1,9 +1,9 @@
 @extends('layout.admin')
 
 @section('content')
-<h1>Staff List</h1>
+<h2>Staff List</h2>
 
-<a href="{{ route('admin.staff.create') }}" class="btn btn-primary">Add New Staff</a>
+<a href="{{ route('admin.staff.create') }}" class="add-link">Add New Staff</a>
 
 @if(session('success'))
     <div class="alert alert-success">{{ session('success') }}</div>
@@ -44,7 +44,7 @@
                 <td>{{ $member->rank }}</td>
                 <td>{{ $member->status == 'active' ? 'Active' : 'Inactive' }}</td>
                 <td>{{ $member->gender }}</td>
-                <td>
+                <td class="table-actions">
                     <a href="{{ route('admin.staff.edit', $member->staff_id) }}" class="btn btn-warning">Edit</a>
                     <form action="{{ route('admin.staff.destroy', $member->staff_id) }}" method="POST" style="display:inline;">
                         @csrf

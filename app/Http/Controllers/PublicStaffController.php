@@ -13,6 +13,6 @@ class PublicStaffController extends Controller
         $staff = Staff::select('staff_id', 'first_name', 'last_name', 'rank', 'biography', 'image')
             ->get();
 
-        return view('staff.index', compact('staff')); // Return view with staff data
+        return view('staff.index', compact('staff')); 
     }
 }

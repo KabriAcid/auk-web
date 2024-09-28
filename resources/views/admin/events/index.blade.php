@@ -1,8 +1,8 @@
 @extends('layout.admin')
 
 @section('content')
-    <h1>Events</h1>
-    <a href="{{ route('admin.events.create') }}">Create New Event</a>
+    <h2>Events</h2>
+    <a href="{{ route('admin.events.create') }}" class="add-link">Create New Event</a>
     
     @if(session('success'))
         <div>{{ session('success') }}</div>
@@ -31,7 +31,7 @@
                     <td>{{ $event->end_time }}</td>
                     <td>{{ $event->location }}</td>
                     <td>{{ $event->organizer }}</td>
-                    <td>
+                    <td class="table-actions">
                         <a href="{{ route('admin.events.edit', $event->id) }}">Edit</a>
                         <form action="{{ route('admin.events.destroy', $event->id) }}" method="POST" style="display:inline;">
                             @csrf

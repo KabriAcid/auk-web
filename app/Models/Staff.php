@@ -24,7 +24,6 @@ class Staff extends Model
     // Enable timestamps (created_at, updated_at)
     public $timestamps = true;
 
-    // Specify which fields are mass-assignable
     protected $fillable = [
         'first_name', 'last_name', 'rank', 'biography', 'image', 'email', 'phone', 'gender', 'status','department_id'
     ];

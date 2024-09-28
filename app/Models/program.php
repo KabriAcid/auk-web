@@ -9,11 +9,11 @@ class Program extends Model
 {
     use HasFactory;
 
-    protected $table = 'programs'; // Specify the table name if different
+    protected $table = 'programs';
 
-    protected $primaryKey = 'program_id'; // Specify the primary key
+    protected $primaryKey = 'program_id'; 
 
-    // Add 'program_description' to the fillable properties
+    
     protected $fillable = [
         'program_name', 'department_id', 'program_description'
     ];

@@ -92,7 +92,7 @@ class CollegeController extends Controller
     // Show the dean's message for public view
     public function showDeanMessage()
     {
-        $college = College::first(); // Get the first college or modify as needed
-        return view('home', compact('college')); // Main view that includes all sections
+        $college = College::first(); 
+        return view('home', compact('college'));
     }
 }

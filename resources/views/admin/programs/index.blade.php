@@ -1,8 +1,8 @@
 @extends('layout.admin')
 
 @section('content')
-<h1>Programs List</h1>
-<a href="{{ route('admin.programs.create') }}">Add New Program</a>
+<h2>Programs List</h2>
+<a href="{{ route('admin.programs.create') }}" class="add-link">Add New Program</a>
 @if(session('success'))
     <div class="alert alert-success">{{ session('success') }}</div>
 @endif
@@ -23,8 +23,8 @@
             <td>{{ $index + 1 }}</td>
             <td>{{ $program->program_name }}</td>
             <td>{{ $program->department->department_name }}</td>
-            <td>{{ Str::limit($program->program_description, 1000) }}</td> <!-- Displaying a truncated version of the description -->
-            <td>
+            <td>{{ Str::limit($program->program_description, 1000) }}</td> 
+            <td class="table-actions">
                 <a href="{{ route('admin.programs.edit', $program->program_id) }}">Edit</a>
                 <form action="{{ route('admin.programs.destroy', $program->program_id) }}" method="POST" style="display:inline;">
                     @csrf

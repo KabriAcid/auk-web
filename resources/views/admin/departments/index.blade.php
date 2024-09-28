@@ -1,9 +1,9 @@
 @extends('layout.admin')
 
 @section('content')
-<h1>Department List</h1>
+<h2>Department List</h2>
 
-<a href="{{ route('admin.departments.create') }}">Add New Department</a>
+<a href="{{ route('admin.departments.create') }}" class="add-link">Add New Department</a>
 @if(session('success'))
     <div class="alert alert-success">{{ session('success') }}</div>
 @endif
@@ -23,8 +23,8 @@
     <tr>
         <td>{{ $department->department_id }}</td>
         <td>{{ $department->department_name }}</td>
-        <td>{{ $department->college->college_name ?? 'N/A' }}</td> <!-- Assuming department belongs to college -->
-        <td>
+        <td>{{ $department->college->college_name ?? 'N/A' }}</td> 
+        <td class="table-actions">
             <a href="{{ route('admin.departments.edit', $department->department_id) }}">Edit</a>
             <form action="{{ route('admin.departments.destroy', $department->department_id) }}" method="POST" style="display:inline;">
                 @csrf
