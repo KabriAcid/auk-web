@@ -11,14 +11,14 @@ class College extends Model
 
     protected $table = 'colleges';
 
-    // Tell Laravel to use 'college_id' as the primary key
+    
     protected $primaryKey = 'college_id';
 
-    // If 'college_id' is not auto-incrementing, you can specify that too
-    public $incrementing = true; // Set to 'false' if it isn't auto-incrementing
+   
+    public $incrementing = true;
 
-    // Define the type of the primary key field
-    protected $keyType = 'int'; // If it's an integer, otherwise use 'string'
+  
+    protected $keyType = 'int'; 
 
     protected $fillable = [
         'college_name', 'dean_name', 'dean_welcome_message', 'dean_image'

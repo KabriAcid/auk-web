@@ -23,7 +23,7 @@
     <tr>
         <td>{{ $department->department_id }}</td>
         <td>{{ $department->department_name }}</td>
-        <td>{{ $department->college->college_name ?? 'N/A' }}</td> <!-- Assuming department belongs to college -->
+        <td>{{ $department->college->college_name ?? 'N/A' }}</td> 
         <td>
             <a href="{{ route('admin.departments.edit', $department->department_id) }}">Edit</a>
             <form action="{{ route('admin.departments.destroy', $department->department_id) }}" method="POST" style="display:inline;">

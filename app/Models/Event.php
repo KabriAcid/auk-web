@@ -31,7 +31,7 @@ class Event extends Model
         $startTime = $this->start_time;
 
         if ($startTime > $now) {
-            return $startTime->diff($now); // Returns a DateInterval object
+            return $startTime->diff($now); 
         } elseif ($startTime <= $now && ($this->end_time > $now || $this->end_time === null)) {
             return 'Ongoing';
         } else {

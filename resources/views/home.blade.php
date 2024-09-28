@@ -4,7 +4,7 @@
 <body style="font-family:figtree;"></body>
 <main>
     @include('partials.carousel')
-    @include('partials.dean-message', ['college' => $college]) <!-- Pass the college variable -->
+    @include('partials.dean-message', ['college' => $college]) 
     @include('partials.featured-news')
     @include('partials.about-college')
     @include('partials.academic-programmes', ['programs' => $programs])

@@ -1,4 +1,4 @@
-<!-- resources/views/layouts/admin.blade.php -->
+<!-- resources/views/layout/admin.blade.php -->
 <!DOCTYPE html>
 <html>
 <head>

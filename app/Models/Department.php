@@ -9,19 +9,19 @@ class Department extends Model
 {
     use HasFactory;
 
-    // Specify the table name if different from the default 'departments'
+    
     protected $table = 'departments'; 
 
-    // Specify the primary key if it's not the default 'id'
+    
     protected $primaryKey = 'department_id';
 
-    // Allow mass assignment of the following fields
+   
     protected $fillable = [
         'department_name', 
         'college_id',
     ];
 
-    // Enable timestamps if you are using the 'created_at' and 'updated_at' columns
+  
     public $timestamps = true;
 
     /**

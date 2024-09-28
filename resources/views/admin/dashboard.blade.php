@@ -1,6 +1,6 @@
 <!-- resources/views/admin/dashboard.blade.php -->
 
-@extends('layout.admin') <!-- Assuming there's a main admin layout -->
+@extends('layout.admin') 
 
 @section('content')
 <div class="container">

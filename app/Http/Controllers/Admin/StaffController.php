@@ -34,10 +34,10 @@ class StaffController extends Controller
             'phone' => 'nullable|string|max:15',
             'rank' => 'required|string|max:255',
             'department_id' => 'required|exists:departments,department_id',
-            'status' => 'nullable|string|in:active,inactive', // Allow null or specific values
+            'status' => 'nullable|string|in:active,inactive', 
             'gender' => 'required|in:male,female,other',
             'biography' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:5120', // Image validation
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:5120', 
         ]);
 
         // Set default status to 'active' if not provided
@@ -46,8 +46,8 @@ class StaffController extends Controller
 
         // Handle the image upload
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/staff'); // Store in storage/app/public/staff
-            $data['image'] = str_replace('public/', 'storage/', $imagePath); // Make accessible via /storage
+            $imagePath = $request->file('image')->store('public/staff'); 
+            $data['image'] = str_replace('public/', 'storage/', $imagePath); 
         }
 
         // Log the status being created
@@ -77,10 +77,10 @@ class StaffController extends Controller
             'phone' => 'nullable|string|max:15',
             'rank' => 'required|string|max:255',
             'department_id' => 'required|exists:departments,department_id',
-            'status' => 'required|string|in:active,inactive', // Validate status must be either active or inactive
+            'status' => 'required|string|in:active,inactive', 
             'gender' => 'required|in:male,female,other',
             'biography' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:5120', // Image validation
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:5120', 
         ]);
     
         // Fetch the staff record by staff_id
@@ -93,7 +93,7 @@ class StaffController extends Controller
         if ($request->hasFile('image')) {
             // Delete the old image if necessary
             if ($staff->image) {
-                \Storage::delete(str_replace('storage/', 'public/', $staff->image)); // Delete old image
+                \Storage::delete(str_replace('storage/', 'public/', $staff->image)); 
             }
     
             // Store new image and merge into $data
@@ -115,7 +115,7 @@ class StaffController extends Controller
 
         // Delete the staff's image if it exists
         if ($staff->image) {
-            \Storage::delete(str_replace('storage/', 'public/', $staff->image)); // Delete image from storage
+            \Storage::delete(str_replace('storage/', 'public/', $staff->image)); 
         }
 
         $staff->delete();

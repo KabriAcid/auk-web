@@ -23,7 +23,7 @@
             <td>{{ $index + 1 }}</td>
             <td>{{ $program->program_name }}</td>
             <td>{{ $program->department->department_name }}</td>
-            <td>{{ Str::limit($program->program_description, 1000) }}</td> <!-- Displaying a truncated version of the description -->
+            <td>{{ Str::limit($program->program_description, 1000) }}</td> 
             <td>
                 <a href="{{ route('admin.programs.edit', $program->program_id) }}">Edit</a>
                 <form action="{{ route('admin.programs.destroy', $program->program_id) }}" method="POST" style="display:inline;">
