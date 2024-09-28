@@ -1,10 +1,8 @@
-<!-- resources/views/admin/dashboard.blade.php -->
-
-@extends('layout.admin') 
+@extends('layout.admin')
 
 @section('content')
 <div class="container">
-    <h1>Admin Dashboard</h1>
+    <h2>Dashboard</h2>
     
     <!-- Key Metrics -->
     <div class="row">
