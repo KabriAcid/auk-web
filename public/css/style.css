@@ -482,3 +482,72 @@ body {
 .back-button:hover {
     background-color: #0056b3;
 }
+
+.carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #232020; /* Gray color for default dots */
+}
+
+.carousel-indicators .active {
+    background-color: #870c0c; /* White color for the active dot */
+}
+
+#carouselSection {
+    padding: 0; /* Remove padding from the entire section */
+}
+
+.carousel {
+    width: 100vw; /* Set carousel width to full viewport width */
+    margin-left: calc(-50vw + 50%); /* Center the carousel to remove left and right padding */
+}
+
+.carousel-inner img {
+    width: 100vw; /* Ensure images take up full viewport width */
+    height: 70vw; /* Adjust the height to keep the aspect ratio */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Adjust the width of controls for better visibility */
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+    font-size: 2rem; /* Increase the size of the chevrons if needed */
+    color: #fff; /* Set chevron color */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    margin-bottom: 0; /* Remove bottom margin from the top navigation */
+    padding-bottom: 0; /* Remove bottom padding from the top navigation */
+}
+
+#carouselSection {
+    margin-top: 0; /* Remove top margin from the carousel section */
+    padding-top: 0; /* Remove top padding from the carousel section */
+}
+
+.carousel {
+    margin-top: 0; /* Remove any default margin from the carousel itself */
+}
+#carouselSection {
+    margin-top: -20px; /* Adjust the value to bring the carousel closer to the nav */
+}
+
+.carousel-inner img {
+    height: 500px; /* Set a fixed height (adjust as needed) */
+    object-fit: cover; /* Ensures the image fills the area without distorting */
+    width: 100%; /* Maintain full width */
+}
