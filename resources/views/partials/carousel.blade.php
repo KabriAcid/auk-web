@@ -1,5 +1,5 @@
 <section id="carouselSection">
-            <h2>Our Campus</h2>
+           
             <div id="campusCarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
