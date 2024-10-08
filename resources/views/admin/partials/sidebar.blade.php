@@ -33,7 +33,7 @@
     const mainContent = document.getElementById('mainContent');
 
     toggleButton.addEventListener('click', function() {
-        sidebar.classList.toggle('hide'); // Toggle sidebar visibility
-        mainContent.classList.toggle('shift'); // Shift content margin
+        sidebar.classList.toggle('hide'); 
+        mainContent.classList.toggle('shift'); 
     });
 </script>
