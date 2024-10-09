@@ -3,12 +3,24 @@
 @section('content')
 <body style="font-family:figtree;"></body>
 <main>
-    @include('partials.carousel')
-    @include('partials.dean-message', ['college' => $college]) 
-    @include('partials.featured-news')
-    @include('partials.about-college')
-    @include('partials.academic-programmes', ['programs' => $programs])
-    @include('partials.quick-links')
+    <div class="section">
+        @include('partials.carousel')
+    </div>
+    <div class="section">
+        @include('partials.dean-message', ['college' => $college]) 
+    </div>
+    <div class="section">
+        @include('partials.featured-news')
+    </div>
+    <div class="section">
+        @include('partials.about-college')
+    </div>
+    <div class="section">
+        @include('partials.academic-programmes', ['programs' => $programs])
+    </div>
+    <div class="section">
+        @include('partials.quick-links')
+    </div>
 </main>
 </body>
 @endsection
