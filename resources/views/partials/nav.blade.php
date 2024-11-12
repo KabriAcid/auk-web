@@ -14,7 +14,7 @@
         <div class="top-navbar">
             <nav class="navbar">
                 <ul class="left">
-                    <li><a href="#"><i class="bx bx-phone"></i> +2349037237738</a></li>
+                    <li><a href="#"><i class="bx bx-phone"></i> +2348161882848</a></li>
                     <li><a href="mailto:info@example.com"><i class="bx bx-envelope"></i> info@cis/auk.com</a></li>
                     <li><a href="#"><i class="bx bx-map"></i> P.M.B 820101, Katsina, Nigeria</a></li>
                 </ul>
